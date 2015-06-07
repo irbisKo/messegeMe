@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="MySQL - messegeme@localhost" uuid="b46ba5c1-1356-4e0b-94e8-3453f2e5ac4f">
+    <database-info product="MySQL" version="5.6.24-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.35 ( Revision: 5fb9c5849535c13917c2cf9baaece6ef9693ef27 )">
+      <extra-name-characters>#@</extra-name-characters>
+      <identifier-quote-string>`</identifier-quote-string>
+    </database-info>
+    <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
+    <schema name="" catalog="messegeme"/>
+    <table name="messege" schema="" catalog="messegeme" type="TABLE">
+      <column name="idmessege" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="title" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="text" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="iduser" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
+      <primary-key name="PRIMARY" columns="idmessege"/>
+      <foreign-key name="iduser" columns="iduser" ref-table="user" ref-schema="" ref-catalog="messegeme" ref-columns="iduser" update-rule="3" delete-rule="3" deferrability="2"/>
+      <index name="iduser_idx" unique="false" columns="iduser"/>
+    </table>
+    <table name="user" schema="" catalog="messegeme" type="TABLE">
+      <column name="iduser" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+      <column name="name" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <column name="password" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
+      <primary-key name="PRIMARY" columns="iduser"/>
+      <exported-key name="iduser" table="messege" schema="" catalog="messegeme" columns="iduser"/>
+    </table>
+  </data-source>
+</component>
