@@ -1,0 +1,50 @@
+<ui:composition template="/templates/default/main.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:b="http://bootsfaces.net/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:define name="content">
+        <h:head>
+            <title> Your homepage</title>
+
+        </h:head>
+        <h:form>
+            <b:row>
+                <b:column col-xs="6" col-md="3">
+                    <b:thumbnail>
+                        <img data-src="holder.js/100%x180/sky" alt="Generic placeholder thumbnail"/>
+                    </b:thumbnail>
+                </b:column>
+                <b:column col-xs="6" col-md="3">
+                    <h3>Welcome, #{LoginBean.username}</h3>
+                </b:column>
+            </b:row>
+            <br/>
+            <h:outputText value ="This ist aecured welcome page!"/>
+            <br/>
+            <h:commandLink action="#{navigationBean.toUserLocation}" value="Complete your profile"/>
+            <h:commandLink action="#{LoginBean.doLogOut}" value="Logout"/>
+           <br/>
+            <b:inputText placeholder = "Type your message here..." >
+
+                <h:outputText value="Your mood:"/>
+                <b:inputText>
+                    <f:facet name="mood description">
+                        <h:outputText value="" />
+                        <b:dropButton value="Default">
+                            <b:navLink value="Action" href="#"></b:navLink>
+                            <b:navLink value="Another action" href="#"></b:navLink>
+                            <b:navLink value="Something else here" href="#"></b:navLink>
+                            <b:navLink></b:navLink>
+                            <b:navLink header="Nav header"></b:navLink>
+                            <b:navLink value="Separated link" href="#"></b:navLink>
+                            <b:navLink value="One more separated link" href="#"></b:navLink>
+                        </b:dropButton>
+                    </f:facet>
+                </b:inputText>
+            </b:inputText>
+
+        </h:form>
+
+
+
+    </ui:define>
+</ui:composition>

@@ -20,29 +20,29 @@
 
 <body>
 -->
-<h:form id="form">
-    <h:panelGrid columns="2">
+        <h:form id="form">
+            <h:panelGrid columns="2">
 
         <h:outputText value="your name:"/>
-        <h:inputText id="username" value="#{loginBean.username}"></h:inputText>
+        <h:inputText id="username" value="#{LoginBean.username}"></h:inputText>
         <h:message for="username"></h:message>
         <br /><br />
 
         <h:outputText value="Password" />
-        <h:inputSecret id="password" value="#{loginBean.password}"></h:inputSecret>
+        <h:inputSecret id="password" value="#{LoginBean.password}"></h:inputSecret>
         <h:message for="password"></h:message>
         <br /><br />
         <!--
-      <h:outputLabel id="userNameLabel" for="username" value="#{loginBean.username}:"/>
+      <h:outputLabel id="userNameLabel" for="username" value="#{LoginBean.username}:"/>
       <h:inputText id="username" autocomplete="off" />
 
-    <h:outputLabel id="passwordLabel" for="password" value="#{loginBean.password}:"/>
+    <h:outputLabel id="passwordLabel" for="password" value="#{LoginBean.password}:"/>
       <h:inputSecret id="password" autocomplete="off"/>
       -->
         <div/>
 
         <h:panelGroup>
-            <h:commandButton type="submit" action="#{loginBean.loginCheckPersistCall}" value="Login"/>
+            <h:commandButton type="submit" action="#{LoginBean.loginCheckPersistCall}" value="Login"/>
             <h:commandButton type="reset" value="Clear"/>
         </h:panelGroup>
     </h:panelGrid>

@@ -1,12 +1,16 @@
 package com.irbis.common;
 
-import com.irbis.dao.UserDao;
+
 import com.irbis.models.User;
 import com.irbis.service.UserService;
-import org.hibernate.Session;
-import org.hibernate.cfg.Configuration;
+
+
+
+import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.SessionScoped;
+import javax.faces.context.FacesContext;
 import java.io.Serializable;
 
 /**
@@ -14,9 +18,15 @@ import java.io.Serializable;
  */
 @ManagedBean
 @SessionScoped
-public class loginBean  implements Serializable {
+public class LoginBean implements Serializable {
 
     private static final long serialVersionUID = 11;
+
+
+    private String username;
+    private String password;
+
+    private boolean loggedIn;
 
     public String getUsername() {
         return username;
@@ -34,41 +44,101 @@ public class loginBean  implements Serializable {
         this.password = password;
     }
 
-    private String username;
-    private String password;
+    public boolean isLoggedIn() {
+        return loggedIn;
+    }
+
+    public void setLoggedIn(boolean loggedIn) {
+        this.loggedIn = loggedIn;
+    }
+
+    @ManagedProperty(value ="#{navigationBean}")
+    private NavigationBean navigationBean;
 
 
-    public void loginCheckPersistCall() {
+    public void signUp() {
        // System.out.println("Hier ist loginCheck");
 
 
         try {
+            UserService userService = new UserService();
+            if(userService.findByName(username)) {
+                FacesContext.getCurrentInstance().addMessage(
+                        null, new FacesMessage(FacesMessage.SEVERITY_WARN,"This login is already in use!"
+                                ,"Please try again!"));
+                navigationBean.redirectToInfo();
+            }else {
+
+                User user = new User();
+
+                user.setName(username);
+                user.setPassword(password);
+
+                userService.persist(user);
 
 
-            //  Session session = HibernateUtil.getSessionFactory().openSession();
+                //        session.save(user);
+                //       session.getTransaction().commit();
 
-    //    Session session = new Configuration().configure().buildSessionFactory().openSession();
-    //        session.beginTransaction();
-            User user = new User();
-
-            user.setName(username);
-            user.setPassword(password);
-
-            UserService userService =new UserService();
-            userService.persist(user);
-
-
-    //        session.save(user);
-     //       session.getTransaction().commit();
-
-
-            System.out.println("Great! User was saved");
+                    navigationBean.toLogin();
+           System.out.println("Great! User was saved");
+            }
         }catch(Throwable ex){
-            System.err.println("Failed to create sessionFactory object." + ex);
+            System.err.println("Failed to create sessionFactory object.bySignUp" + ex);
             throw new ExceptionInInitializerError(ex);
         }
 
 
+    }
+    public String logIn(){
+
+        try{
+            UserService userService =new UserService();
+          if(userService.findByNamePassword(username, password))
+          {
+
+                FacesContext.getCurrentInstance().addMessage(
+                        null, new FacesMessage(FacesMessage.SEVERITY_INFO,"User!","username:  "+getUsername()+" userPass:  "+getPassword()+"!")
+                );
+                 loggedIn =true;
+             //   return "user/userprofile.xhtml";
+           //   return navigationBean.toUserProfile();
+              return navigationBean.redirectToUserProfile();
+            }else{
+                FacesContext.getCurrentInstance().addMessage(
+                        null, new FacesMessage(FacesMessage.SEVERITY_WARN,"Invalid Login!"
+                                ,"Please try again!")
+
+
+
+
+                );
+
+              loggedIn =false;
+              return navigationBean.redirectToErrorPage();
+              //  return navigationBean.redirectToLogin();
+            }
+
+
+
+        }catch (Throwable ex){
+            System.err.println("Failed to create sessionFactory object.byLogin" + ex);
+            throw new ExceptionInInitializerError(ex);
+
+        }
+    }
+    public String doLogOut(){
+        loggedIn =false;
+        //Set logout message
+        FacesMessage msg = new FacesMessage("Logout success!","INFO MSG");
+        msg.setSeverity(FacesMessage.SEVERITY_INFO); //type of msg
+
+        return "welcome.xhtml";
+    }
+
+
+    public void setNavigationBean(NavigationBean navigationBean) {
+        this.navigationBean = navigationBean;
     }
 
 }

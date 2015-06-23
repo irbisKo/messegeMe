@@ -5,7 +5,19 @@
 	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
          id="WebApp_ID" version="2.5">
 
-    <display-name>JavaServerFaces</display-name>
+    <display-name>MessageMes</display-name>
+
+    <!-- Login filter -->
+    <filter>
+        <filter-name>AuthorisationFilter</filter-name>
+        <filter-class>com.irbis.filter.AuthorisationFilter</filter-class>
+    </filter>
+    <!-- Set the login filter to secure all the pages in the /secured/* path of the application  -->
+    <filter-mapping>
+        <filter-name>AuthorisationFilter</filter-name>
+        <url-pattern>/user/*</url-pattern>
+    </filter-mapping>
+
     <!-- Change to "Production" when you are ready to deploy -->
     <context-param>
         <param-name>javax.faces.PROJECT_STAGE</param-name>
@@ -16,6 +28,11 @@
         <param-name>BootsFaces_USETHEME</param-name>
         <param-value>true</param-value>
     </context-param>
+    <!-- Welcome page -->
+    <welcome-file-list>
+        <welcome-file>welcome.xhtml</welcome-file>
+    </welcome-file-list>
+
 
     <!-- JSF mapping -->
     <servlet>
@@ -41,4 +58,5 @@
         <servlet-name>Faces Servlet</servlet-name>
         <url-pattern>*.xhtml</url-pattern>
     </servlet-mapping>
+
 </web-app>

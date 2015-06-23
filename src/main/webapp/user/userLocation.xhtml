@@ -1,0 +1,60 @@
+<ui:composition template="/templates/default/main.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:b="http://bootsfaces.net/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:define name="content">
+        <h:head>
+
+            <title> Your homepage</title>
+            <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"></link>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+            <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+            <script
+                    src="http://maps.googleapis.com/maps/api/js?key=AIzaSyABtJ5jpLvQrX6r6CeXgg6mL1RCZMuF3bk">
+                </script>
+
+                <script>
+                function initialize() {
+                    var mapProp = {
+                        center:new google.maps.LatLng(51.508742,-0.120850),
+                        zoom:5,
+                        mapTypeId:google.maps.MapTypeId.ROADMAP
+                    };
+                    var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
+                }
+                google.maps.event.addDomListener(window, 'load', initialize);
+            </script>
+
+
+        </h:head>
+
+            <div class="container">
+                <div class="jumbotron">
+                    <h1>My First Bootstrap Page</h1>
+                    <p>Resize this responsive page to see the effect!</p>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4">
+                        <h3>Column 1</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <h3>Column 2</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+                    </div>
+                    <div class="col-sm-4">
+                        <h3>Column 3</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+                    </div>
+                </div>
+            </div>
+            <div id="googleMap" style="width:500px;height:380px;"></div>
+
+
+
+
+
+    </ui:define>
+</ui:composition>
