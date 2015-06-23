@@ -39,7 +39,7 @@ public class AuthorisationFilter implements Filter {
         // For other requests LoginBean is present but we need to check if user has logged in successfully
         if (loginBean == null || !loginBean.isLoggedIn()) {
             String contextPath = ((HttpServletRequest) request).getContextPath();
-            ((HttpServletResponse) response).sendRedirect(contextPath + "/login.xhtml");
+            ((HttpServletResponse) response).sendRedirect(contextPath + "/logIn.xhtml");
         }
         chain.doFilter(request, response);
     }
