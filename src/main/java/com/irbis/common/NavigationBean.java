@@ -8,8 +8,8 @@ import java.io.Serializable;
  * Simple navigation bean
  * @author irrbis
  */
-@ManagedBean(name = "navigationBean", eager = true)
-@SessionScoped
+//@ManagedBean(name = "navigationBean", eager = true)
+//@SessionScoped
 public class NavigationBean implements Serializable {
     private static final long serialVersionUID = 1520318172495977648L;
 
@@ -71,7 +71,7 @@ public String redirectToLogin(){
      */
 
     public String redirectToUserProfile(){
-        return "/user/userprofile.xhtml?faces-redirect=true";
+        return "user/userprofile.xhtml?faces-redirect=true";
     }
 
     /**
@@ -80,7 +80,7 @@ public String redirectToLogin(){
      */
 
     public String toUserProfile(){
-        return "/user/userprofile.xhtml";
+        return "user/userprofile.xhtml";
     }
 
     /**
@@ -126,7 +126,7 @@ public String redirectToLogin(){
 
     public  String toExtendedProfile(){
 
-        return "user/extendedProfile.xhtml";
+        return "/user/extendedProfile.xhtml";
     }
 
     /**
@@ -136,7 +136,7 @@ public String redirectToLogin(){
 
     public  String redirectToExtendedProfile(){
 
-        return "extendedProfile.xhtml?faces-redirect=true";
+        return "/user/extendedProfile.xhtml?faces-redirect=true";
     }
     /**
      *  Go to ErrorPage page.

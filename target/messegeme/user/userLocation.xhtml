@@ -6,26 +6,67 @@
 
             <title> Your homepage</title>
             <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"></link>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-            <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
             <script
                     src="http://maps.googleapis.com/maps/api/js?key=AIzaSyABtJ5jpLvQrX6r6CeXgg6mL1RCZMuF3bk">
-                </script>
+            </script>
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+            <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 
                 <script>
-                function initialize() {
-                    var mapProp = {
-                        center:new google.maps.LatLng(51.508742,-0.120850),
-                        zoom:5,
-                        mapTypeId:google.maps.MapTypeId.ROADMAP
-                    };
-                    var map=new google.maps.Map(document.getElementById("googleMap"), mapProp);
-                }
-                google.maps.event.addDomListener(window, 'load', initialize);
+                    var map;
+
+                    function initialize() {
+                        var mapOptions = {
+                            zoom: 6
+                        };
+                        map = new google.maps.Map(document.getElementById('map-canvas'),
+                                mapOptions);
+
+                        // Try HTML5 geolocation
+                        if(navigator.geolocation) {
+                            navigator.geolocation.getCurrentPosition(function(position) {
+                                var pos = new google.maps.LatLng(position.coords.latitude,
+                                        position.coords.longitude);
+
+                                var infowindow = new google.maps.InfoWindow({
+                                    map: map,
+                                    position: pos,
+                                    content: 'Location found using HTML5.'
+                                });
+
+                                map.setCenter(pos);
+                            }, function() {
+                                handleNoGeolocation(true);
+                            });
+                        } else {
+                            // Browser doesn't support Geolocation
+                            handleNoGeolocation(false);
+                        }
+                    }
+
+                    function handleNoGeolocation(errorFlag) {
+                        if (errorFlag) {
+                            var content = 'Error: The Geolocation service failed.';
+                        } else {
+                            var content = 'Error: Your browser doesn\'t support geolocation.';
+                        }
+
+                        var options = {
+                            map: map,
+                            position: new google.maps.LatLng(60, 105),
+                            content: content
+                        };
+
+                        var infowindow = new google.maps.InfoWindow(options);
+                        map.setCenter(options.position);
+                    }
+
+                    google.maps.event.addDomListener(window, 'load', initialize);
             </script>
 
 
         </h:head>
+
 
             <div class="container">
                 <div class="jumbotron">
@@ -50,7 +91,7 @@
                     </div>
                 </div>
             </div>
-            <div id="googleMap" style="width:500px;height:380px;"></div>
+            <div id="map-canvas" style="width:500px;height:380px;"></div>
 
 
 
