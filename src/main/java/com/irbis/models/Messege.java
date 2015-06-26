@@ -5,22 +5,38 @@ import javax.persistence.*;
 
 /**
  * Created by meta on 07.06.2015.
+ *
+ * 267/06 names have a difference between message and  head className  is MessEge.
  */
+
+// TODO match false writen  names  messEge
+
 @Entity
-@Table(name ="messege")
-public class Messege {
-    private int idmessege;
+@Table(name ="message")
+public class Messege  implements IModel{
+    private int idmessage;
     private String title;
     private String text;
-
     @Id
-    @Column(name = "idmessege", nullable = false, insertable = true, updatable = true)
-    public int getIdmessege() {
-        return idmessege;
+    @Column(name ="iduser", nullable = false, insertable = true, updatable = true)
+    public int getIduser() {
+        return iduser;
     }
 
-    public void setIdmessege(int idmessege) {
-        this.idmessege = idmessege;
+    public void setIduser(int iduser) {
+        this.iduser = iduser;
+    }
+
+    private int iduser;
+
+    @Id
+    @Column(name = "idmessage", nullable = false, insertable = true, updatable = true)
+    public int getIdmessage() {
+        return idmessage;
+    }
+
+    public void setIdmessage(int idmessage) {
+        this.idmessage = idmessage;
     }
 
     @Basic
@@ -48,18 +64,18 @@ public class Messege {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
-        Messege messege = (Messege) o;
+        Messege message = (Messege) o;
 
-        if (idmessege != messege.idmessege) return false;
-        if (title != null ? !title.equals(messege.title) : messege.title != null) return false;
-        if (text != null ? !text.equals(messege.text) : messege.text != null) return false;
+        if (idmessage != message.idmessage) return false;
+        if (title != null ? !title.equals(message.title) : message.title != null) return false;
+        if (text != null ? !text.equals(message.text) : message.text != null) return false;
 
         return true;
     }
 
     @Override
     public int hashCode() {
-        int result = idmessege;
+        int result = idmessage;
         result = 31 * result + (title != null ? title.hashCode() : 0);
         result = 31 * result + (text != null ? text.hashCode() : 0);
         return result;

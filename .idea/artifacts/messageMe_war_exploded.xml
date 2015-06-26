@@ -31,6 +31,7 @@
           <element id="library" level="project" name="Maven: log4j:log4j:1.2.16" />
           <element id="library" level="project" name="Maven: javassist:javassist:3.12.1.GA" />
           <element id="library" level="project" name="Maven: javax:javaee-web-api:7.0" />
+          <element id="library" level="project" name="Maven: junit:junit:4.8.2" />
         </element>
       </element>
       <element id="directory" name="META-INF">

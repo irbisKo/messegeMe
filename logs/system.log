@@ -1,0 +1,79 @@
+2015-06-26 17:14:16,342 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-26 17:14:16,352 +0200 [main] INFO  (Version.java:54) - HHH000412: Hibernate Core {4.3.9.Final}
+2015-06-26 17:14:16,355 +0200 [main] INFO  (Environment.java:239) - HHH000206: hibernate.properties not found
+2015-06-26 17:14:16,358 +0200 [main] INFO  (Environment.java:346) - HHH000021: Bytecode provider name : javassist
+2015-06-26 17:14:16,385 +0200 [main] INFO  (Configuration.java:2075) - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2015-06-26 17:14:16,386 +0200 [main] INFO  (Configuration.java:2094) - HHH000040: Configuration resource: /hibernate.cfg.xml
+2015-06-26 17:14:16,510 +0200 [main] INFO  (Configuration.java:2216) - HHH000041: Configured SessionFactory: null
+2015-06-26 17:14:16,820 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:93) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-26 17:14:16,837 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:166) - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/messegeme]
+2015-06-26 17:14:16,838 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:175) - HHH000046: Connection properties: {user=root, password=****}
+2015-06-26 17:14:16,838 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:180) - HHH000006: Autocommit mode: false
+2015-06-26 17:14:16,841 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:102) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-06-26 17:14:17,155 +0200 [main] INFO  (Dialect.java:145) - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-06-26 17:14:17,163 +0200 [main] INFO  (LobCreatorBuilder.java:97) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+2015-06-26 17:14:17,307 +0200 [main] INFO  (TransactionFactoryInitiator.java:62) - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-26 17:14:17,312 +0200 [main] INFO  (ASTQueryTranslatorFactory.java:47) - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-26 17:14:18,763 +0200 [main] WARN  (SqlExceptionHelper.java:144) - SQL Error: 1364, SQLState: HY000
+2015-06-26 17:14:18,763 +0200 [main] ERROR (SqlExceptionHelper.java:146) - Field 'iduser' doesn't have a default value
+2015-06-26 17:14:18,774 +0200 [main] INFO  (AbstractBatchImpl.java:208) - HHH000010: On release of batch it still contained JDBC statements
+2015-06-26 17:14:18,776 +0200 [main] WARN  (SqlExceptionHelper.java:232) - SQL Warning Code: 1364, SQLState: HY000
+2015-06-26 17:14:18,776 +0200 [main] WARN  (SqlExceptionHelper.java:233) - Field 'iduser' doesn't have a default value
+2015-06-26 17:15:21,720 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-26 17:15:21,729 +0200 [main] INFO  (Version.java:54) - HHH000412: Hibernate Core {4.3.9.Final}
+2015-06-26 17:15:21,731 +0200 [main] INFO  (Environment.java:239) - HHH000206: hibernate.properties not found
+2015-06-26 17:15:21,733 +0200 [main] INFO  (Environment.java:346) - HHH000021: Bytecode provider name : javassist
+2015-06-26 17:15:21,752 +0200 [main] INFO  (Configuration.java:2075) - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2015-06-26 17:15:21,752 +0200 [main] INFO  (Configuration.java:2094) - HHH000040: Configuration resource: /hibernate.cfg.xml
+2015-06-26 17:15:21,801 +0200 [main] INFO  (Configuration.java:2216) - HHH000041: Configured SessionFactory: null
+2015-06-26 17:15:21,869 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:93) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-26 17:15:21,873 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:166) - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/messegeme]
+2015-06-26 17:15:21,874 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:175) - HHH000046: Connection properties: {user=root, password=****}
+2015-06-26 17:15:21,874 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:180) - HHH000006: Autocommit mode: false
+2015-06-26 17:15:21,875 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:102) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-06-26 17:15:22,171 +0200 [main] INFO  (Dialect.java:145) - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-06-26 17:15:22,181 +0200 [main] INFO  (LobCreatorBuilder.java:97) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+2015-06-26 17:15:22,376 +0200 [main] INFO  (TransactionFactoryInitiator.java:62) - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-26 17:15:22,380 +0200 [main] INFO  (ASTQueryTranslatorFactory.java:47) - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-26 17:15:23,369 +0200 [main] WARN  (SqlExceptionHelper.java:144) - SQL Error: 1364, SQLState: HY000
+2015-06-26 17:15:23,369 +0200 [main] ERROR (SqlExceptionHelper.java:146) - Field 'iduser' doesn't have a default value
+2015-06-26 17:15:23,371 +0200 [main] INFO  (AbstractBatchImpl.java:208) - HHH000010: On release of batch it still contained JDBC statements
+2015-06-26 17:15:23,373 +0200 [main] WARN  (SqlExceptionHelper.java:232) - SQL Warning Code: 1364, SQLState: HY000
+2015-06-26 17:15:23,374 +0200 [main] WARN  (SqlExceptionHelper.java:233) - Field 'iduser' doesn't have a default value
+2015-06-26 17:19:48,328 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-26 17:19:48,340 +0200 [main] INFO  (Version.java:54) - HHH000412: Hibernate Core {4.3.9.Final}
+2015-06-26 17:19:48,343 +0200 [main] INFO  (Environment.java:239) - HHH000206: hibernate.properties not found
+2015-06-26 17:19:48,344 +0200 [main] INFO  (Environment.java:346) - HHH000021: Bytecode provider name : javassist
+2015-06-26 17:19:48,369 +0200 [main] INFO  (Configuration.java:2075) - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2015-06-26 17:19:48,369 +0200 [main] INFO  (Configuration.java:2094) - HHH000040: Configuration resource: /hibernate.cfg.xml
+2015-06-26 17:19:48,421 +0200 [main] INFO  (Configuration.java:2216) - HHH000041: Configured SessionFactory: null
+2015-06-26 17:19:48,528 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:93) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-26 17:19:48,534 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:166) - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/messegeme]
+2015-06-26 17:19:48,534 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:175) - HHH000046: Connection properties: {user=root, password=****}
+2015-06-26 17:19:48,534 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:180) - HHH000006: Autocommit mode: false
+2015-06-26 17:19:48,536 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:102) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-06-26 17:19:48,963 +0200 [main] INFO  (Dialect.java:145) - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-06-26 17:19:48,974 +0200 [main] INFO  (LobCreatorBuilder.java:97) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+2015-06-26 17:19:49,165 +0200 [main] INFO  (TransactionFactoryInitiator.java:62) - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-26 17:19:49,190 +0200 [main] INFO  (ASTQueryTranslatorFactory.java:47) - HHH000397: Using ASTQueryTranslatorFactory
+2015-06-26 17:19:49,852 +0200 [main] WARN  (SqlExceptionHelper.java:144) - SQL Error: 1452, SQLState: 23000
+2015-06-26 17:19:49,852 +0200 [main] ERROR (SqlExceptionHelper.java:146) - Cannot add or update a child row: a foreign key constraint fails (`messegeme`.`message`, CONSTRAINT `iduser` FOREIGN KEY (`iduser`) REFERENCES `user` (`iduser`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+2015-06-26 17:19:49,853 +0200 [main] INFO  (AbstractBatchImpl.java:208) - HHH000010: On release of batch it still contained JDBC statements
+2015-06-26 17:19:49,856 +0200 [main] WARN  (SqlExceptionHelper.java:232) - SQL Warning Code: 1452, SQLState: HY000
+2015-06-26 17:19:49,856 +0200 [main] WARN  (SqlExceptionHelper.java:233) - Cannot add or update a child row: a foreign key constraint fails (`messegeme`.`message`, CONSTRAINT `iduser` FOREIGN KEY (`iduser`) REFERENCES `user` (`iduser`) ON DELETE NO ACTION ON UPDATE NO ACTION)
+2015-06-26 17:20:40,422 +0200 [main] INFO  (JavaReflectionManager.java:66) - HCANN000001: Hibernate Commons Annotations {4.0.5.Final}
+2015-06-26 17:20:40,433 +0200 [main] INFO  (Version.java:54) - HHH000412: Hibernate Core {4.3.9.Final}
+2015-06-26 17:20:40,435 +0200 [main] INFO  (Environment.java:239) - HHH000206: hibernate.properties not found
+2015-06-26 17:20:40,437 +0200 [main] INFO  (Environment.java:346) - HHH000021: Bytecode provider name : javassist
+2015-06-26 17:20:40,459 +0200 [main] INFO  (Configuration.java:2075) - HHH000043: Configuring from resource: /hibernate.cfg.xml
+2015-06-26 17:20:40,459 +0200 [main] INFO  (Configuration.java:2094) - HHH000040: Configuration resource: /hibernate.cfg.xml
+2015-06-26 17:20:40,512 +0200 [main] INFO  (Configuration.java:2216) - HHH000041: Configured SessionFactory: null
+2015-06-26 17:20:40,594 +0200 [main] WARN  (DriverManagerConnectionProviderImpl.java:93) - HHH000402: Using Hibernate built-in connection pool (not for production use!)
+2015-06-26 17:20:40,599 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:166) - HHH000401: using driver [com.mysql.jdbc.Driver] at URL [jdbc:mysql://localhost:3306/messegeme]
+2015-06-26 17:20:40,599 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:175) - HHH000046: Connection properties: {user=root, password=****}
+2015-06-26 17:20:40,600 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:180) - HHH000006: Autocommit mode: false
+2015-06-26 17:20:40,601 +0200 [main] INFO  (DriverManagerConnectionProviderImpl.java:102) - HHH000115: Hibernate connection pool size: 20 (min=1)
+2015-06-26 17:20:40,856 +0200 [main] INFO  (Dialect.java:145) - HHH000400: Using dialect: org.hibernate.dialect.MySQLDialect
+2015-06-26 17:20:40,862 +0200 [main] INFO  (LobCreatorBuilder.java:97) - HHH000423: Disabling contextual LOB creation as JDBC driver reported JDBC version [3] less than 4
+2015-06-26 17:20:40,987 +0200 [main] INFO  (TransactionFactoryInitiator.java:62) - HHH000399: Using default transaction strategy (direct JDBC transactions)
+2015-06-26 17:20:40,992 +0200 [main] INFO  (ASTQueryTranslatorFactory.java:47) - HHH000397: Using ASTQueryTranslatorFactory

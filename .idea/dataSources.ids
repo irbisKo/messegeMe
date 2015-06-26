@@ -7,12 +7,12 @@
     </database-info>
     <case-sensitivity plain-identifiers="lower" quoted-identifiers="lower"/>
     <schema name="" catalog="messegeme"/>
-    <table name="messege" schema="" catalog="messegeme" type="TABLE">
-      <column name="idmessege" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
+    <table name="message" schema="" catalog="messegeme" type="TABLE">
+      <column name="idmessage" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4" autoIncrement="true"/>
       <column name="title" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
       <column name="text" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
       <column name="iduser" sqlType="INT" precision="10" scale="0" nullable="false" jdbcType="4"/>
-      <primary-key name="PRIMARY" columns="idmessege"/>
+      <primary-key name="PRIMARY" columns="idmessage"/>
       <foreign-key name="iduser" columns="iduser" ref-table="user" ref-schema="" ref-catalog="messegeme" ref-columns="iduser" update-rule="3" delete-rule="3" deferrability="2"/>
       <index name="iduser_idx" unique="false" columns="iduser"/>
     </table>
@@ -21,7 +21,7 @@
       <column name="name" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
       <column name="password" sqlType="VARCHAR" precision="45" scale="0" nullable="false" jdbcType="12"/>
       <primary-key name="PRIMARY" columns="iduser"/>
-      <exported-key name="iduser" table="messege" schema="" catalog="messegeme" columns="iduser"/>
+      <exported-key name="iduser" table="message" schema="" catalog="messegeme" columns="iduser"/>
     </table>
   </data-source>
 </component>
