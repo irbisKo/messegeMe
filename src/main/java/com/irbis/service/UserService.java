@@ -53,7 +53,21 @@ public class UserService {
         userDao.deleteAll();
         userDao.closeCurrentSessionwithTransaction();
     }
+    public boolean findByNamePassword(String name, String password) {
 
+        userDao.openCurrentSession();
+     boolean isUser = userDao.findByNamePassword(name, password);
+        userDao.closeCurrentSession();
+        return isUser;
+    }
+
+
+     public boolean findByName(String name){
+         userDao.openCurrentSession();
+         boolean isUser = userDao.findByName(name);
+         userDao.closeCurrentSession();
+         return isUser;
+     }
     public UserDao getUserDao() {
         return userDao;
     }

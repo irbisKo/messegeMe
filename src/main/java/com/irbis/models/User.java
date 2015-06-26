@@ -16,8 +16,8 @@ public class User implements IModel{
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "iduser", nullable = false)
-    private int iduser;
-    public int getIduser() {
+    private Integer iduser;
+    public Integer getIduser() {
         return iduser;
     }
 

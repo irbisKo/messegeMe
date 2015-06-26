@@ -1,0 +1,41 @@
+<ui:composition template="/templates/default/main.xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:b="http://bootsfaces.net/ui"
+                xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <ui:define name="content">
+
+
+    <h:outputLabel value="Registration of  new member by MessegeMe!"/>
+
+
+        <h:form id="form">
+            <h:panelGrid columns="2">
+
+                <h:outputText value="your name:"/>
+                <h:inputText id="username" value="#{LoginBean.username}"></h:inputText>
+                <h:message for="username"></h:message>
+                <br /><br />
+
+                <h:outputText value="Password" />
+                <h:inputSecret id="password" value="#{LoginBean.password}"></h:inputSecret>
+                <h:message for="password"></h:message>
+                <br /><br />
+                <!--
+              <h:outputLabel id="userNameLabel" for="username" value="#{LoginBean.username}:"/>
+              <h:inputText id="username" autocomplete="off" />
+
+            <h:outputLabel id="passwordLabel" for="password" value="#{LoginBean.password}:"/>
+              <h:inputSecret id="password" autocomplete="off"/>
+              -->
+                <div/>
+
+                <h:panelGroup>
+                    <h:commandButton type="submit" action="#{LoginBean.signUp}" value="Sign up"/>
+                    <h:commandButton type="reset" value="Clear"/>
+                </h:panelGroup>
+            </h:panelGrid>
+        </h:form>
+        <!--
+       </body>
+       -->
+    </ui:define>
+</ui:composition>

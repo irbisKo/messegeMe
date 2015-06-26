@@ -5,8 +5,11 @@ package com.irbis.dao;
  */
 
 import com.irbis.models.User;
+import org.hibernate.Criteria;
+import org.hibernate.criterion.Restrictions;
 
 
+import javax.management.Query;
 import java.util.List;
 
 public class UserDao extends BaseDao<User> implements IUserDao{
@@ -24,6 +27,40 @@ public class UserDao extends BaseDao<User> implements IUserDao{
 
     public void delete(User entity) {
         getCurrentSession().delete(entity);
+    }
+
+   public User find(String name, String password){
+       Criteria criteria = getCurrentSession().createCriteria(User.class);
+     //  criteria.add(Restrictions.eq("name",name)).uniqueResult();
+       criteria.add(Restrictions.eq("password", password)).uniqueResult();
+
+       return (User) criteria.add(Restrictions.eq("name",name)).uniqueResult();
+   }
+
+    public boolean findByName(String name){
+        Criteria criteria = getCurrentSession().createCriteria(User.class);
+        User user =(User) criteria.add(Restrictions.eq("name",name)).uniqueResult();
+        if(user == null){
+            return false;
+        }else {
+            if (user.getIduser() != 0)
+                return true;
+        }
+        return false;
+    }
+
+    public  boolean findByNamePassword(String name, String password){
+        Criteria criteria = getCurrentSession().createCriteria(User.class);
+        User user =(User) criteria.add(Restrictions.eq("name",name)).uniqueResult();
+    if(user == null){
+        return false;
+    }else{
+
+        if( user.getPassword().equals(password))
+
+                              return true;
+    }
+        return false;
     }
 
     public List<User> findAll() {

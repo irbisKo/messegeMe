@@ -5,11 +5,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.irbis</groupId>
-    <artifactId>messegeMe</artifactId>
+    <artifactId>messageMe</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
     <build>
-    <finalName>messegeme</finalName>
+    <finalName>messageme</finalName>
 
     <plugins>
         <plugin>
@@ -79,7 +79,7 @@
         <scope>compile</scope>
     </dependency>
 
-    <!-- MySQL database driver -->
+
     <!-- MySQL database driver -->
     <dependency>
         <groupId>mysql</groupId>
@@ -93,11 +93,21 @@
         <artifactId>hibernate-core</artifactId>
         <version>4.3.9.Final</version>
     </dependency>
+    <dependency>
+        <groupId>log4j</groupId>
+        <artifactId>log4j</artifactId>
+        <version>1.2.16</version>
+    </dependency>
 
     <dependency>
         <groupId>javassist</groupId>
         <artifactId>javassist</artifactId>
         <version>3.12.1.GA</version>
+    </dependency>
+    <dependency>
+        <groupId>javax</groupId>
+        <artifactId>javaee-web-api</artifactId>
+        <version>7.0</version>
     </dependency>
 
 </dependencies>
